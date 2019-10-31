@@ -12,5 +12,5 @@ wrk.startFriending()
 
 
 
-Credits:<br>
-<h3>vk_api lib: https://github.com/python273/vk_api</h3>
+<h3>Credits:</h3><br>
+vk_api lib: https://github.com/python273/vk_api
