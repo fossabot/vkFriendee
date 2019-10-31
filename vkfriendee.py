@@ -15,7 +15,7 @@ class Friends:
 	TIMEOUT = 30
 	TIMEOUT_THREESHOLD = 20 # After which accepted count of friends we have to wait with TIMEOUT(mins)
 
-	def __init__(self, vk, count=1500, city="Москва"):
+	def __init__(self, vk, count=1500, city="Default"):
 
 		if isinstance(vk, VkApi):
 			vk.auth()
@@ -53,7 +53,7 @@ class Friends:
 		return self.__vk.friends.get()['count']
 
 	def __log(self, aled, ladd):
-		logging.info("\nFriends to add: %d\nFriends already added: %d\nFriends left to add: %d\nFriends Currently: %d\n", self.count, aled, ladd, self.__getMyFriends())
+		logging.info("\nFriends to add: %d\nFriends already added: %d\nFriends left to add: %d\nFriends Currently: %d\nFriendship requests sent in total: %d\nPercent of users accepted the request: %f\n", self.count, aled, ladd, self.__getMyFriends(), self.srstf, ((aled/self.srstf)*100) if self.srstf != 0 else 0.0)
 	
 	def __isBlocked(self, user_id):
 		""" Returns BOOL if user_id is blocked
@@ -78,20 +78,17 @@ class Friends:
 		logging.info("Sending requests to add in friends")
 		sugs = self.__getSuggestions()
 		i = 0
-		while True:
-			if count <= i:
-				break
-
-
+		for x in range(0, count):
 			sug = random.choice(sugs)
 			try:
-				if sug['is_closed'] == False and sug['city']['title'] == self.city:
+				if sug['is_closed'] == False and ((sug['city']['title'] == self.city) if self.city != "Default" else True):
 					self.__add(sug['id'])
 					logging.info("Sent a request to %d", sug['id'])
-					i = i + 1
+					self.srstf = self.srstf + 1
 					time.sleep(random.randint(20, 40))
 			except KeyError:
 				pass
+		
 			
 
 
@@ -100,6 +97,7 @@ class Friends:
 		bfrs = self.__getMyFriends()
 		ttfrs = bfrs + self.count
 
+		self.srstf = 0
 		aled = 0
 		ladd = self.count
 		
@@ -114,7 +112,7 @@ class Friends:
 				"""
 				break
 
-			self.__addNewFriends(count=1)
+			self.__addNewFriends(count=5)
 			
 
 			ladd = ttfrs - self.__getMyFriends()
@@ -123,4 +121,3 @@ class Friends:
 			sl = random.randint(300, 600)
 			logging.info("Sleeping now %dsecs before starting new iteration", sl)
 			time.sleep(sl)
-
