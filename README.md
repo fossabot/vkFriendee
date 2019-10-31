@@ -1,10 +1,10 @@
-This wrapper made for making friends in VK on auto-pilot.
+<h1>This wrapper made for making friends in VK on auto-pilot.</h1>
 
 
 Usage:
 
 vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)
-wrk = Friends(vk, city="Moscow") 
+wrk = Friends(vk, city="Moscow")
 wrk.startFriending()
 
 
