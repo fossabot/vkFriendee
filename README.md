@@ -1,14 +1,15 @@
 <h1>This wrapper made for making friends in VK on auto-pilot.</h1>
 
 
-Usage:
-
-vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)
-wrk = Friends(vk, city="Moscow")
+<h2>Usage:</h2>
+<br>
+<code>
+vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)<br>
+wrk = Friends(vk, city="Moscow")<br>
 wrk.startFriending()
+</code>
 
 
 
-
-Credits:
-vk_api lib: https://github.com/python273/vk_api
+Credits:<br>
+<h3>vk_api lib: https://github.com/python273/vk_api</h3>
