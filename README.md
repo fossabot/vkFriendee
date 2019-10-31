@@ -4,8 +4,10 @@
 <h2>Usage:</h2>
 <br>
 <code>
-vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)<br>
-wrk = Friends(vk, city="Moscow")<br>
+vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)
+  
+wrk = Friends(vk, city="Moscow")
+
 wrk.startFriending()
 </code>
 
