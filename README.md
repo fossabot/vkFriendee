@@ -9,6 +9,9 @@ vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)<br>
 wrk = Friends(vk, city="Moscow")<br>
 wrk.startFriending()
 
+<h1>OR<h1>
+  <p>Use test.py instead with arguments. Help command: --help</p>
+
 
 
 
