@@ -3,13 +3,12 @@
 
 <h2>Usage:</h2>
 <br>
-<code>
-vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)
-  
-wrk = Friends(vk, city="Moscow")
 
+
+vk = VkApi("YOUR_NUMBER", "YOUR_PASSWORD)<br>
+wrk = Friends(vk, city="Moscow")<br>
 wrk.startFriending()
-</code>
+
 
 
 
