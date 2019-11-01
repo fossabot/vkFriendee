@@ -75,19 +75,23 @@ class Friends:
 
 
 	def __addNewFriends(self, count=5):
-		logging.info("Sending requests to add in friends")
-		sugs = self.__getSuggestions()
-		i = 0
-		for x in range(0, count):
-			sug = random.choice(sugs)
-			try:
-				if sug['is_closed'] == False and ((sug['city']['title'] == self.city) if self.city != "Default" else True):
-					self.__add(sug['id'])
-					logging.info("Sent a request to %d", sug['id'])
-					self.srstf = self.srstf + 1
-					time.sleep(random.randint(20, 40))
-			except KeyError:
-				pass
+		try:
+			logging.info("Sending requests to add in friends")
+			sugs = self.__getSuggestions()
+			i = 0
+			for x in range(0, count):
+				sug = random.choice(sugs)
+				try:
+					if sug['is_closed'] == False and ((sug['city']['title'] == self.city) if self.city != "Default" else True):
+						self.__add(sug['id'])
+						logging.info("Sent a request to %d", sug['id'])
+						self.srstf = self.srstf + 1
+						time.sleep(random.randint(20, 40))
+				except KeyError:
+					pass
+			return 0
+		except exceptions.ApiError:
+			return -1
 		
 			
 
@@ -111,13 +115,15 @@ class Friends:
 				If we've reached needed amount of friends then we break the loop
 				"""
 				break
-
-			self.__addNewFriends(count=5)
+			sl = random.randint(300, 600)
+			if self.__addNewFriends(count=5) == -1:
+				sl = 43200
+				logging.info("Seems like we've been banned out of sending friendship requests. Gotta to wait.")
 			
 
 			ladd = ttfrs - self.__getMyFriends()
 			aled = self.__getMyFriends() - bfrs
 			self.__log(aled, ladd)
-			sl = random.randint(300, 600)
+			
 			logging.info("Sleeping now %dsecs before starting new iteration", sl)
 			time.sleep(sl)
