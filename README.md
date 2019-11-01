@@ -19,7 +19,7 @@ It can helps anybody who wants to automatically get suggested friends which are 
 3.  Thirdly you need to execute script with basic executor('main.py).
 With command-line looks-like: 
 
-		python main.py --login "YOUR_NUMBER" --password       "YOUR_PASSWORD" --verbose
+		python main.py --login "YOUR_NUMBER" --password "YOUR_PASSWORD" --verbose
 
 Then you'll see the verbose output
 
