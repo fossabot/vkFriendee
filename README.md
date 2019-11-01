@@ -47,3 +47,8 @@ Full command-line:
 
 ## Credits
 vk_api: https://github.com/python273/vk_api
+
+## TO-DO
+- Async way of logging
+- Standalone and other modes(with abstract class)
+- Make a basic UI
