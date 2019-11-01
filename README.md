@@ -37,9 +37,9 @@ Public functions definition:
 ### main.py
 This script allows you to basically execute vkFriendee class.
 Full command-line:
-> --login(-l) - Accepts here a login for VK. It must be your telephone number
---password(-p) - Accepts here a password for VK. It must be your password for the account.
---verbose(-v) - Switcher for verbose output
+> --login(-l) - Accepts here a login for VK. It must be your telephone number<br>
+--password(-p) - Accepts here a password for VK. It must be your password for the account.<br>
+--verbose(-v) - Switcher for verbose output<br>
 --help - ...
 
 ## Credits
