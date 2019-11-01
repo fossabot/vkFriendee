@@ -13,6 +13,9 @@ It can helps anybody who wants to automatically get suggested friends which are 
 - Perfect logging of script activity
 - Elaborate stats view
 
+## Requirements:
+- Python 3+
+
 ## How to install
 1. First of all you need to fork/clone/download this repository
 2.  Secondly you need to python been installed properly.
