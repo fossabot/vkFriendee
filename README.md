@@ -1,4 +1,6 @@
 # VkFriendee - Make friends easily
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fractyfree%2FvkFriendee.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fractyfree%2FvkFriendee?ref=badge_shield)
+
 
 
 ### What is this?
@@ -52,3 +54,7 @@ vk_api: https://github.com/python273/vk_api
 - Async way of logging
 - Standalone and other modes(with abstract class)
 - Make a basic UI
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fractyfree%2FvkFriendee.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fractyfree%2FvkFriendee?ref=badge_large)
