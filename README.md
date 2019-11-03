@@ -4,7 +4,7 @@
 ### What is this?
 With this script you can easily start gaining count of your friends in VK. Just follow the instructions below and feel free to ask anything.
 
-### Who it can helps?
+### Who can it help?
 It can helps anybody who wants to automatically get suggested friends which are recommended by VK itself. Also there is a big effort for webmasters who want to advertise something in VK more politely for alghoritms.
 
 ### Features:
